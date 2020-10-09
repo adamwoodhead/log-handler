@@ -34,7 +34,7 @@ namespace LogHandler
 
         public static void Exception(string text, bool fileLog = false)
         {
-            DateTime stamp = DateTime.Now;
+            DateTime stamp = DateTime.UtcNow;
             Action action = new Action(() =>
             {
                 Host.WriteLog(Host.FormatLog(text, stamp, LogType.EXCEPTION), LogType.EXCEPTION);
@@ -46,7 +46,7 @@ namespace LogHandler
 
         public static void Error(string text, bool fileLog = false)
         {
-            DateTime stamp = DateTime.Now;
+            DateTime stamp = DateTime.UtcNow;
             Action action = new Action(() =>
             {
                 Host.WriteLog(Host.FormatLog(text, stamp, LogType.ERROR), LogType.ERROR);
@@ -58,7 +58,7 @@ namespace LogHandler
 
         public static void Warning(string text, bool fileLog = false)
         {
-            DateTime stamp = DateTime.Now;
+            DateTime stamp = DateTime.UtcNow;
             Action action = new Action(() =>
             {
                 Host.WriteLog(Host.FormatLog(text, stamp, LogType.WARNING), LogType.WARNING);
@@ -70,7 +70,7 @@ namespace LogHandler
 
         public static void Info(string text, bool fileLog = false)
         {
-            DateTime stamp = DateTime.Now;
+            DateTime stamp = DateTime.UtcNow;
             Action action = new Action(() =>
             {
                 Host.WriteLog(Host.FormatLog(text, stamp, LogType.INFO), LogType.INFO);
@@ -82,7 +82,7 @@ namespace LogHandler
 
         public static void Verbose(string text, bool fileLog = false)
         {
-            DateTime stamp = DateTime.Now;
+            DateTime stamp = DateTime.UtcNow;
             Action action = new Action(() =>
             {
                 Host.WriteLog(Host.FormatLog(text, stamp, LogType.VERBOSE), LogType.VERBOSE);
