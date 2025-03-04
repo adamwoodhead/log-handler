@@ -10,6 +10,7 @@ namespace LogHandler
 {
     internal class Host
     {
+
         internal Task LoopTask { get; set; }
 
         internal List<Action> TaskFlow { get; } = new List<Action>();
@@ -18,7 +19,9 @@ namespace LogHandler
         
         internal LogOptions LogOptions { get; set; }
 
-        internal int LogID { get; set; } = 1;
+        private int logID = 0;
+
+        internal int LogID { get => ++logID; set => logID = value; }
 
         internal async Task BeginTaskLoopAsync()
         {
